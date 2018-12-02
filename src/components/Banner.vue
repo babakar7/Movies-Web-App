@@ -1,12 +1,12 @@
 <template>
 
-  <div class="banner" v-bind:style="{background:  'linear-gradient( rgba(0, 0, 0, 0.3),  rgba(0, 0, 0, 0.3) ), url(' + backImage + ')' }">
+  <div class="banner" v-bind:style="{background:  'linear-gradient( rgba(0, 0, 0, 0.4),  rgba(0, 0, 0, 0.4) ), url(' + backImage + ')' }">
 
 
     <div class="progress">
-      <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+      <div class="progress-bar" role="progressbar" v-bind:style="{width: progress}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
-    
+
 
     <div class="info">
 
@@ -51,6 +51,27 @@ export default {
 
   computed:{
 
+    progress(){
+
+      switch(this.position){
+        case 0:
+          return '20%'
+          break;
+        case 1:
+          return '40%'
+            break;
+        case 2:
+          return '60%'
+            break;
+          case 3:
+            return '80%'
+            break;
+          case 4:
+            return '100%'
+              break;
+      }
+    },
+
     currentMovie(){
 
       return this.movies[this.position]
@@ -94,6 +115,7 @@ export default {
   background-repeat: no-repeat;
   position:relative;
   background-size: auto;
+  margin-bottom:150px;
 }
 
 .info{
@@ -117,18 +139,19 @@ export default {
   text-transform: uppercase;
   text-align:left;
   margin: 0px;
-
 }
-
 
 .details{
   font-size:18px;
   font-weight:700;
 }
 
-
 .progress{
+  height:4px;
+}
 
+.progress-bar{
+  background-color:#2b5aa5;
 }
 
 </style>

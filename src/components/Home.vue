@@ -1,6 +1,6 @@
 <template>
 
-  <div class="container">
+  <div class="container-fluid home">
 
     <Banner></Banner>
 
@@ -43,10 +43,11 @@ export default {
 
 <style >
 
-.container{
-  height:100%;
-  width:100%;
+
+.home{
+  padding:0px;
 }
+
 
 
 </style>

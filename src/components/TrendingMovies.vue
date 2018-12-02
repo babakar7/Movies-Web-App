@@ -2,8 +2,6 @@
 
   <div class="container-fluid wrapper">
 
-
-
     <h5 class="title">{{title}}</h5>
 
     <font-awesome-icon id="prev" icon="chevron-left" size="4x" v-on:click="prev()"
@@ -181,6 +179,7 @@ export default {
 
 .wrapper{
   position:relative;
+  margin-top:50px;
 }
 
 .card:first-child{

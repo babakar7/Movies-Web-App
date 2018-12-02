@@ -1,12 +1,16 @@
 <template>
 
-
   <div class="card" v-bind:style="{backgroundImage:'url('+posterPath+')'}">
+      <router-link v-bind:to="{name:'movie', params:{id: tmovie.id}}">
 
+        <div class="link-wrap">
+
+        </div>
+
+
+      </router-link>
 
   </div>
-
-
 
 </template>
 
@@ -64,6 +68,11 @@ export default {
 
   opacity:1;
   transform:scale(1.15)
+}
+
+.link-wrap{
+height:100%;
+width:100%;
 }
 
 

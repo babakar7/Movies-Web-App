@@ -80,7 +80,7 @@ mutations: {
      // get moviies playing now
      axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${context.state.apiKey}`)
        .then((res)=>{
-
+         console.log(res)
          context.commit('setNowPlaying', res.data.results)
 
          })
