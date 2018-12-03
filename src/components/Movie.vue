@@ -101,6 +101,7 @@ export default {
       axios.get(`https://api.themoviedb.org/3/movie/${this.$route.params.id}?api_key=${this.$store.state.apiKey}`)
         .then((res)=>{
 
+
           this.movieInfo = res.data
               axios.get(`https://api.themoviedb.org/3/movie/${this.movieInfo.id}/videos?api_key=${this.$store.state.apiKey}`)
                 .then((response)=>{
