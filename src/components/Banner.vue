@@ -1,7 +1,10 @@
 <template>
 
+<div>
 
-  <div class="banner" v-bind:style="{background:  'linear-gradient( rgba(0, 0, 0, 0.4),  rgba(0, 0, 0, 0.4) ), url(' + backImage + ')' }">
+<transition name="banner-fade" mode="out-in">
+
+  <div class="banner" v-bind:key="backImage" v-bind:style="{background:  'linear-gradient( rgba(0, 0, 0, 0.4),  rgba(0, 0, 0, 0.4) ), url(' + backImage + ')' }">
 
     <router-link v-bind:to="{name:'movie', params:{id: currentMovie.id, type:'nowplaying'}}">
 
@@ -26,9 +29,15 @@
   </div>
 
 
+
   </router-link>
 
   </div>
+
+  </transition>
+
+</div>
+
 
 </template>
 
@@ -168,5 +177,14 @@ export default {
 .router-wrap{
   height:100%;
   width:100%;
+}
+
+.banner-fade-enter-active, .fade-leave-active{
+  transition:all 0.6s ease;
+
+}
+
+.banner-fade-enter{
+  transform:translateX(50px);
 }
 </style>

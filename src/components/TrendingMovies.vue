@@ -5,7 +5,7 @@
     <h5 class="title">{{title}}</h5>
 
     <font-awesome-icon id="prev" icon="chevron-left" size="4x" v-on:click="prev()"
-    v-bind:style="{color:arrowColor}" />
+    v-bind:style="{color:arrowColor}" class="arrow" />
 
 
 <transition-group name="fade" >
@@ -25,7 +25,7 @@
   </transition-group>
 
     <font-awesome-icon id="next" icon="chevron-right" size="4x"  v-on:click="next()"
-      v-bind:style="{color:arrowColor}" />
+      v-bind:style="{color:arrowColor}"  class="arrow"/>
 
 
 <hr class="separator" />
@@ -53,7 +53,7 @@ export default {
     return {
 
       position:{start:0, end:6},
-      arrowColor:"#2b5aa5"
+      arrowColor:"#4776c1"
 
     }
   },
@@ -156,7 +156,7 @@ export default {
 
 <style >
 
-.fade-enter-active, .fade-leave-actve{
+.fade-enter-active, .fade-leave-active{
   transition:all 1s;
 }
 
@@ -219,4 +219,11 @@ cursor:pointer;
   height:2px;
 }
 
+.arrow{
+  opacity:0.8;
+}
+
+.arrow:hover{
+  opacity:1;
+}
 </style>

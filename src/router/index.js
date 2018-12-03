@@ -5,7 +5,7 @@ import Movie from'@/components/Movie'
 
 Vue.use(Router)
 
-export default new Router({
+ const router =  new Router({
 
   mode:'history',
   routes: [
@@ -35,4 +35,26 @@ return { x: 0, y: 0 }
 },
 
 
+
 })
+
+
+router.beforeEach((to, from, next) => {
+  // If this isn't an initial page load.
+      // Start the route progress bar.
+      setTimeout(()=>{
+        next()
+      }, 250)
+
+      NProgress.start()
+      NProgress.inc();
+      NProgress.inc(0.5);
+
+})
+
+router.afterEach((to, from) => {
+  // Complete the animation of the route progress bar.
+  NProgress.done()
+})
+
+export default router
