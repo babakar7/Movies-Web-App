@@ -27,7 +27,9 @@
       <h1 class="movie-title">{{movieInfo.title}}</h1>
       <h1 class="released">Released | {{movieInfo.original_language}}</h1>
 
-      <h1 class="vote">{{movieInfo.vote_average}} Rating</h1>
+      <font-awesome-icon class="star" icon="star"
+      v-bind:style="{color:'white'}"/>
+      <span class="vote">{{movieInfo.vote_average}} </span>
 
     </div>
 

@@ -6,11 +6,12 @@ import router from './router'
 import axios from 'axios'
 import {store} from './store/store.js'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+import { faChevronRight, faChevronLeft, faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 library.add(faChevronRight)
 library.add(faChevronLeft)
+library.add(faStar)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 

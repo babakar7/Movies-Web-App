@@ -4,7 +4,7 @@
 
 <transition name="banner-fade" mode="out-in">
 
-  <div class="banner" v-bind:key="backImage" v-bind:style="{background:  'linear-gradient( rgba(0, 0, 0, 0.4),  rgba(0, 0, 0, 0.4) ), url(' + backImage + ')' }">
+  <div class="banner" v-bind:key="position" v-bind:style="{background:  'linear-gradient( rgba(0, 0, 0, 0.4),  rgba(0, 0, 0, 0.4) ), url(' + backImage + ')' }">
 
     <router-link v-bind:to="{name:'movie', params:{id: currentMovie.id, type:'nowplaying'}}">
 
@@ -20,7 +20,10 @@
       <h1 class="tag"> LATEST</h1>
       <h1 class= "movie-title"> {{currentMovie.title}} </h1>
       <p class="details">
-        <span> {{currentMovie.vote_average}} Rating</span>
+
+        <font-awesome-icon class="star" icon="star"
+        v-bind:style="{color:'white'}"/>
+        <span> {{currentMovie.vote_average}} </span>
 
       </p>
 
@@ -92,7 +95,7 @@ export default {
 
     currentMovie(){
 
-      return this.movies[this.position]
+      return this.movies[this.position] ? this.movies[this.position] : 0
 
 
     },

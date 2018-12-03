@@ -2,6 +2,14 @@
 
   <div class="card" v-bind:style="{backgroundImage:'url('+posterPath+')'}">
 
+    <div class="rating">
+      <font-awesome-icon class="star" icon="star"
+      v-bind:style="{color:'white'}"/>
+
+    <span class="rating-num">{{tmovie.vote_average}}</span>
+
+    </div>
+
       <router-link v-bind:to="{name:'movie', params:{id: tmovie.id, type:dataType}}">
 
         <div class="link-wrap">
@@ -68,6 +76,8 @@ export default {
   border-radius: 5px;
   opacity:0.5;
   background-size: cover;
+  position:relative;
+
 }
 
 .card:hover{
@@ -82,5 +92,28 @@ height:100%;
 width:100%;
 }
 
+
+.rating{
+  position:absolute;
+  left:0;
+  top:5px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display:flex;
+  padding: 0 5px 0px 5px;
+  opacity:0.8;
+}
+
+.star{
+  height:12px;
+  width:12px;
+  margin-right:10px;
+  margin-top:2px;
+
+}
+
+.rating-num{
+  font-size:13px;
+  font-weight:bold;
+}
 
 </style>
