@@ -1,6 +1,6 @@
 <template>
 
-  <div class="card" v-bind:style="{backgroundImage:'url('+posterPath+')'}">
+  <div  class="card" v-bind:style="{backgroundImage:'url('+posterPath+')'}">
 
     <div class="rating">
       <font-awesome-icon class="star" icon="star"
@@ -10,14 +10,23 @@
 
     </div>
 
-      <router-link v-bind:to="{name:'movie', params:{id: tmovie.id, type:dataType}}">
+      <router-link  v-if="dataType" v-bind:to="{name:'movie', params:{id: tmovie.id, type:dataType}}">
 
         <div class="link-wrap">
 
         </div>
 
+      </router-link>
+
+
+      <router-link  v-if="!dataType" v-bind:to="{name:'movie', params:{id: tmovie.id}}">
+
+        <div class="link-wrap">
+
+        </div>
 
       </router-link>
+
 
   </div>
 
@@ -36,7 +45,6 @@ export default {
 
         dataType:{
           type:String,
-          required:true
         }
 
   },
@@ -49,6 +57,7 @@ export default {
 
   computed:{
     posterPath(){
+
 
         return this.$store.state.config ? this.$store.state.config.base_url+
               this.$store.state.config.poster_sizes[1] +
@@ -77,6 +86,7 @@ export default {
   opacity:0.5;
   background-size: cover;
   position:relative;
+  margin-bottom:10px;
 
 }
 

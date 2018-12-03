@@ -3,6 +3,7 @@
 <div>
 
   <div class="container-fluid movie">
+    <Header> </Header>
 
 
     <div class="banner" v-bind:style="{background:'linear-gradient( rgba(0, 0, 0, 0.4),  rgba(0, 0, 0, 0.4) ), url(' + backImage + ')'}" >
@@ -66,8 +67,8 @@ export default {
 
   data () {
     return {
-        movieCredits:null,
-        movieInfo:null,
+        movieCredits:{},
+        movieInfo:{},
     }
   },
 
@@ -87,7 +88,35 @@ export default {
 
   created(){
     // get the right movie from the array
-    this.movieInfo =  this.$store.getters.getMovieInfo(this.$route.params)
+
+    if(this.$route.params.type){
+      this.movieInfo =  this.$store.getters.getMovieInfo(this.$route.params)
+      axios.get(`https://api.themoviedb.org/3/movie/${this.movieInfo.id}/videos?api_key=${this.$store.state.apiKey}`)
+        .then((response)=>{
+          console.log(response)
+        })
+
+    } else {
+
+      axios.get(`https://api.themoviedb.org/3/movie/${this.$route.params.id}?api_key=${this.$store.state.apiKey}`)
+        .then((res)=>{
+
+          this.movieInfo = res.data
+              axios.get(`https://api.themoviedb.org/3/movie/${this.movieInfo.id}/videos?api_key=${this.$store.state.apiKey}`)
+                .then((response)=>{
+                  console.log(response)
+                })
+          })
+
+        .catch((err)=>{
+          console.log(err)
+        })
+    }
+
+
+
+
+
 
   },
 

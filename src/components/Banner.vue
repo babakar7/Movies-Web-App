@@ -120,7 +120,6 @@ export default {
 
       setInterval(()=>{
         this.position < 4 ?  this.position += 1 : this.position = 0
-        console.log(this.position)
       }, 5000)
 
   }
@@ -183,11 +182,15 @@ export default {
 }
 
 .banner-fade-enter-active, .fade-leave-active{
-  transition:all 0.6s ease;
+  transition:all 0.6s ease-in-out;
 
 }
 
 .banner-fade-enter{
   transform:translateX(50px);
 }
+
+
+
+
 </style>

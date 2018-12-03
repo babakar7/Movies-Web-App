@@ -1,7 +1,7 @@
 <template>
 
   <div class="container-fluid home">
-
+    <Header> </Header>
     <Banner></Banner>
 
     <TrendingMovies dataType="umovies" ></TrendingMovies>
@@ -10,7 +10,12 @@
   <!--  <TrendingMovies dataType="tmovies" ></TrendingMovies>-->
     <TrendingMovies dataType="toprated" ></TrendingMovies>
 
+
+    <Footer> </Footer>
+
   </div>
+
+
 
 </template>
 
@@ -19,13 +24,17 @@
 import TrendingMovies from './TrendingMovies'
 import axios from 'axios'
 import Banner from './Banner'
+import Header from './Header'
+import Footer from './Footer'
 
 
 export default {
   name: 'Home',
   components:{
     TrendingMovies,
-    Banner
+    Banner,
+    Header,
+    Footer
   },
   data () {
     return {

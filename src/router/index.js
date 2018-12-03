@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
 import Movie from'@/components/Movie'
+import SearchResults from '@/components/SearchResults'
 
 Vue.use(Router)
 
@@ -16,10 +17,16 @@ Vue.use(Router)
     },
 
     {
-      path: '/movie/:id/:type',
+      path: '/movie/:id/:type?',
       name: 'movie',
       component: Movie,
 
+    },
+
+    {
+      path:'/results',
+      name:'results',
+      component:SearchResults
     },
 
     {
