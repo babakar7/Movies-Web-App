@@ -16,12 +16,23 @@ export default new Router({
     },
 
     {
-      path: '/movie/:id',
+      path: '/movie/:id/:type',
       name: 'movie',
-      component: Movie
+      component: Movie,
+
     },
 
-  ]
+    {
+    path: '*',
+    redirect: '/'
+
+    }
+
+  ],
+
+  scrollBehavior (to, from, savedPosition) {
+return { x: 0, y: 0 }
+},
 
 
 })

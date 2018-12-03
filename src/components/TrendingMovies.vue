@@ -12,6 +12,8 @@
 
     <TrendingMovie
 
+    v-bind:dataType="dataType"
+
     v-bind:key="tmovie.id"
 
      v-for="tmovie in movieArr"

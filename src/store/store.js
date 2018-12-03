@@ -10,7 +10,6 @@ state:{
 
   apiKey: "164f91a00bb33839a1cc01e1302cd1d0",
   apiRAT: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNjRmOTFhMDBiYjMzODM5YTFjYzAxZTEzMDJjZDFkMCIsInN1YiI6IjVjMDJjZmZiYzNhMzY4NjViYzBhMDM2MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.mVfiwYDkvj3S065Lpxib5JTDpM0fDZkMrSsIq1qPbZw",
-  //trendingMovies: null,
   upcomingMovies:null,
   nowPlaying: null,
   topRated:null,
@@ -18,11 +17,6 @@ state:{
 },
 
 mutations: {
-
-//  setTrendingMovies(state, trendingMovies){
-//    state.trendingMovies = trendingMovies
-  //},
-
   setConfig(state, config){
     state.config = config
   },
@@ -80,7 +74,6 @@ mutations: {
      // get moviies playing now
      axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${context.state.apiKey}`)
        .then((res)=>{
-         console.log(res)
          context.commit('setNowPlaying', res.data.results)
 
          })
@@ -104,7 +97,30 @@ mutations: {
    },
 
 
+ },
 
+ getters:{
+   getMovieInfo: (state) => ({id, type}) => {
+
+     switch(type){
+       case "umovies":
+            return state.upcomingMovies.find((el)=>{
+            return el.id == id
+          })
+          break;
+       case "nowplaying":
+           return state.nowPlaying.find((el)=>{
+           return el.id == id
+         })
+          break;
+       case "toprated":
+         return state.topRated.find((el)=>{
+         return  el.id == id
+       })
+        break;
+     }
+
+   }
  }
 
 

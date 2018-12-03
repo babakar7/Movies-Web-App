@@ -1,7 +1,8 @@
 <template>
 
   <div class="card" v-bind:style="{backgroundImage:'url('+posterPath+')'}">
-      <router-link v-bind:to="{name:'movie', params:{id: tmovie.id}}">
+
+      <router-link v-bind:to="{name:'movie', params:{id: tmovie.id, type:dataType}}">
 
         <div class="link-wrap">
 
@@ -23,7 +24,13 @@ export default {
     tmovie:{
       type:Object,
       required:true
-    }
+    },
+
+        dataType:{
+          type:String,
+          required:true
+        }
+
   },
   data () {
     return {

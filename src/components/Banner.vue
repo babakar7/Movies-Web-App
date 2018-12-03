@@ -1,14 +1,18 @@
 <template>
 
+
   <div class="banner" v-bind:style="{background:  'linear-gradient( rgba(0, 0, 0, 0.4),  rgba(0, 0, 0, 0.4) ), url(' + backImage + ')' }">
 
+    <router-link v-bind:to="{name:'movie', params:{id: currentMovie.id, type:'nowplaying'}}">
+
+      <div class="router-wrap">
 
     <div class="progress">
       <div class="progress-bar" role="progressbar" v-bind:style="{width: progress}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
 
 
-    <div class="info">
+    <div class="info" v-if="currentMovie">
 
       <h1 class="tag"> LATEST</h1>
       <h1 class= "movie-title"> {{currentMovie.title}} </h1>
@@ -18,6 +22,11 @@
       </p>
 
     </div>
+
+  </div>
+
+
+  </router-link>
 
   </div>
 
@@ -123,6 +132,8 @@ export default {
   bottom:5%;
   left:5%;
   text-align:left;
+  color:white;
+
 
 }
 
@@ -154,4 +165,8 @@ export default {
   background-color:#2b5aa5;
 }
 
+.router-wrap{
+  height:100%;
+  width:100%;
+}
 </style>
