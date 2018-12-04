@@ -6,11 +6,14 @@
 
 
 
-    <TrendingMovies dataType="umovies" class="movies"></TrendingMovies>
+    <TrendingMovies data-aos="fade-up"   data-aos-duration="1000" 
+ dataType="umovies" ></TrendingMovies>
 
-    <TrendingMovies dataType="nowplaying" class="movies" ></TrendingMovies>
+    <TrendingMovies data-aos="fade-up"      data-aos-duration="1000"
+  dataType="nowplaying"  ></TrendingMovies>
   <!--  <TrendingMovies dataType="tmovies" ></TrendingMovies>-->
-    <TrendingMovies dataType="toprated" class="movies" ></TrendingMovies>
+    <TrendingMovies data-aos="fade-up"      data-aos-duration="1000"
+ dataType="toprated"   ></TrendingMovies>
 
 
 
@@ -29,8 +32,8 @@ import axios from 'axios'
 import Banner from './Banner'
 import Header from './Header'
 import Footer from './Footer'
-import {TweenMax, TimelineLite} from 'gsap/TweenMax'
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default {
   name: 'Home',
@@ -55,8 +58,8 @@ export default {
   },
 
   mounted(){
-    let movies = document.querySelectorAll('.movies')
-    TweenMax.from(movies, 2, {opacity:0, y:100, delay:2, ease:Expo.easeOut,})
+    AOS.init();
+
   }
 }
 </script>
