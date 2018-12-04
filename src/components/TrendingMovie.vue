@@ -93,6 +93,8 @@ export default {
 .card:hover{
   transition: opacity 0.5s;
   transition: transform 0.5s;
+
+
   opacity:1;
   transform:scale(1.15)
 }
