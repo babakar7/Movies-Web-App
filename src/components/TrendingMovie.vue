@@ -85,14 +85,12 @@ export default {
   border-radius: 5px;
   opacity:0.5;
   background-size: cover;
-  position:relative;
   margin-bottom:10px;
 
 }
 
 .card:hover{
-  transition: opacity 0.5s;
-  transition: transform 0.5s;
+  transition: all 0.5s;
 
 
   opacity:1;
