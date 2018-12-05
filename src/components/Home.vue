@@ -2,7 +2,7 @@
 
   <div class="container-fluid home">
     <Header> </Header>
-    <Banner></Banner>
+    <Banner class="banner-comp"></Banner>
 
 
     <TrendingMovies data-aos="fade-up"   data-aos-duration="1000"
@@ -68,6 +68,11 @@ export default {
   padding:0px;
 }
 
+@media only screen and (max-width:768px){
+  .banner-comp{
+    display:none;
+  }
+}
 
 
 </style>

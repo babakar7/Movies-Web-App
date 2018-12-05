@@ -1,7 +1,7 @@
 <template>
 
 
-<div class="col-lg-2 col-md-3 col-sm-6">
+<div class="col-lg-2 col-md-3 col-sm-6  col-6">
 
   <div  class="card" v-bind:style="{backgroundImage:'url('+posterPath+')'}">
 
@@ -103,7 +103,7 @@ export default {
 }
 
 .link-wrap{
-height:100%;
+height:190px;
 width:100%;
 }
 
