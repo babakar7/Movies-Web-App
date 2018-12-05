@@ -217,7 +217,17 @@ display:inline-block;
 
   margin:60px 150px 0px ;
 
+  }
+
+
 }
+
+@media only screen and (max-width:768px){
+
+  .banner{
+
+    display:none;
+  }
 
 
 }

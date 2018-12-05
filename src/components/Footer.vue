@@ -75,4 +75,16 @@ import 'aos/dist/aos.css';
   padding: 150px 0px;
 }
 
+@media only screen and (max-width:768px){
+
+  .tmd-img{
+
+    height:100px;
+    width:auto;
+    margin-left:25px;
+}
+
+
+}
+
 </style>
