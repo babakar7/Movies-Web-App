@@ -2,15 +2,29 @@
 
 <div class="footer">
 
-<div class="details" data-aos="fade-up"   data-aos-duration="1000" >
+  <div class="row">
 
-  <h1>MoviePhile</h1>
 
-  <h4 class="name">By Babakar Diop</h4>
-  <button style="background-color:black" ><a  style="color:white" href="https://www.linkedin.com/in/babakar-diop-5b4bbb44/">Linkedin profile</a> </button>
+    <div class="col-md-6 col-sm-12 ">
+      <div class="details" data-aos="fade-up"   data-aos-duration="1000" >
 
-</div>
-<img  class="tmd-img" src="../assets/tmd.png" data-aos="fade-up"   data-aos-duration="1000"/>
+        <h1>MoviePhile</h1>
+
+        <h4 class="name">By Babakar Diop</h4>
+        <button style="background-color:black" ><a  target="_blank" style="color:white" href="https://www.linkedin.com/in/babakar-diop-5b4bbb44/" >Linkedin profile</a> </button>
+
+      </div>
+
+    </div>
+
+    <div class="col-6">
+      <img  class="tmd-img" src="../assets/tmd.png" data-aos="fade-up"   data-aos-duration="1000"/>
+
+
+    </div>
+  </div>
+
+
 
 </div>
 </template>
@@ -37,13 +51,10 @@ import 'aos/dist/aos.css';
 
 
 <style scoped>
+
 .tmd-img{
 
-  transform:scale(0.8);
-  position:absolute;
-  right:10%;
-  opacity:0.7;
-  top:30%;
+  opacity:0.5;
 
 
 }
@@ -51,6 +62,7 @@ import 'aos/dist/aos.css';
 .details{
   opacity:0.8;
   margin-left:50px;
+  margin-bottom:50px;
 }
 
 .name{
@@ -60,7 +72,6 @@ import 'aos/dist/aos.css';
 
 .footer{
   text-align:left;
-  position:relative;
   padding: 150px 0px;
 }
 

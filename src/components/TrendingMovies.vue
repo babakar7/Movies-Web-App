@@ -7,8 +7,9 @@
     <font-awesome-icon id="prev" icon="chevron-left" size="4x" v-on:click="prev()"
     v-bind:style="{color:arrowColor}" class="arrow" />
 
+    <div class="container">
 
-<transition-group name="fade" >
+    <transition-group name="fade"  tag="div" class="row rowsize" >
 
     <TrendingMovie
 
@@ -21,8 +22,10 @@
      v-bind:tmovie="tmovie">
 
     </TrendingMovie>
-
   </transition-group>
+
+</div>
+
 
     <font-awesome-icon id="next" icon="chevron-right" size="4x"  v-on:click="next()"
       v-bind:style="{color:arrowColor}"  class="arrow"/>
@@ -67,7 +70,7 @@ export default {
             this.position.start -= 1
             this.position.end -= 1
           } else {
-            this.position.start = this.$store.state.upcomingMovies.length - 6
+            this.position.start = this.$store.state.upcomingMovies.length - this.position.end
             this.position.end = this.$store.state.upcomingMovies.length
           }
 
@@ -79,7 +82,7 @@ export default {
           this.position.end += 1
         } else{
           this.position.start = 0
-          this.position.end = 6
+          this.position.end = this.position.end
         }
       }
 
@@ -91,6 +94,7 @@ export default {
 
         if(this.$store.state.upcomingMovies && this.$store.state.nowPlaying &&
         this.$store.state.topRated){
+
 
           switch(this.dataType){
 
@@ -147,6 +151,23 @@ export default {
         if(!this.$store.state.topRated) this.$store.dispatch('getTopRated')
       }
 
+      // set size of movie slider
+
+      console.log(this.$mq, 'mq')
+              switch(this.$mq){
+
+                  case "first":
+                    this.position.end = 4
+                    break;
+                  case "second":
+                    this.position.end = 2
+                      break;
+
+
+              }
+
+
+
     }
 
 }
@@ -164,6 +185,19 @@ export default {
   position: absolute;
 
 }
+
+@media only screen and (min-width:1200px){
+
+  .rowsize{
+    margin: 0px 100px;
+  }
+
+}
+
+
+
+
+
 
 .fade-enter-to, .fade-leave{
   opacity:0.5;

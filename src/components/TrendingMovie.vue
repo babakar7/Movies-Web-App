@@ -1,5 +1,8 @@
 <template>
 
+
+<div class="col-lg-2 col-md-3 col-sm-6">
+
   <div  class="card" v-bind:style="{backgroundImage:'url('+posterPath+')'}">
 
     <div class="rating">
@@ -29,6 +32,9 @@
 
 
   </div>
+
+</div>
+
 
 </template>
 
@@ -81,7 +87,6 @@ export default {
   height:190px;
   width:126px;
   margin-left:20px;
-  display:inline-block;
   border-radius: 5px;
   opacity:0.5;
   background-size: cover;

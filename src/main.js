@@ -9,6 +9,8 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faChevronRight, faChevronLeft, faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import 'aos/dist/aos.css'
+import VueMq from 'vue-mq'
+
 
 library.add(faChevronRight)
 library.add(faChevronLeft)
@@ -17,6 +19,13 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.config.productionTip = false
 
 
+Vue.use(VueMq, {
+  breakpoints: {
+    second: 768,
+    first: 991,
+    lg:  Infinity
+  }
+})
 
 
 

@@ -57,19 +57,20 @@
   position:relative;
 }
 
-.submit-btn{
-  display:inline-block;
-}
 
 .search-field{
   display:inline-block;
-  width:35%;
+  width:40%;
   border-radius:20px;
   font-size:14px;
 }
 
 .searchbar{
-  width:100%
+  display:inline-block;
+  vertical-align: top;
+  width:75%;
+
+
 }
 
 .homelink{
@@ -78,10 +79,36 @@
   font-size:25px;
   font-weight:500;
   display:inline-block;
-  position:absolute;
+  margin-left: 20px;
   left:50px;
   font-weight: bold;
+}
 
+
+@media only screen and (max-width:768px){
+
+  .search-field{
+    margin-right:5%;
+  }
+
+  .homelink{
+    font-size:18px;
+
+  }
+
+
+  .searchbar{
+    width:60%;
+  }
+
+
+
+  .search-field{
+    display:inline-block;
+    width:70%;
+    border-radius:20px;
+    font-size:14px;
+  }
 
 }
 
