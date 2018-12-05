@@ -3,6 +3,7 @@
 <div>
 
   <div class="container-fluid movie">
+
     <Header> </Header>
 
 
@@ -18,6 +19,8 @@
   </div>
 
   <div data-aos="fade-up"   data-aos-duration="1000" class="container details-wrapper">
+
+
 
     <div class=" movie-card"  v-bind:style="{background:'linear-gradient( rgba(0, 0, 0, 0.4),  rgba(0, 0, 0, 0.4) ), url(' + posterImage + ')'}">
 
@@ -154,6 +157,8 @@ export default {
 .details-wrapper{
   position:relative;
   margin-top:50px;
+  text-align: left;
+
 }
 
 #back{
@@ -170,13 +175,12 @@ export default {
   border-radius: 5px;
   background-size: cover;
   background-repeat: no-repeat;
-  position:absolute;
-  left:0px;
+  display:inline-block;
+  margin-right:20px;
 }
 
 .details{
-text-align:left;
-margin-left:13%;
+display:inline-block;
 
 }
 
@@ -203,8 +207,19 @@ margin-left:13%;
 
 
 .synopsis{
-  margin:60px 150px 0px ;
+
   text-align:left;
+}
+
+@media only screen and (min-width:768px){
+
+  .synopsis{
+
+  margin:60px 150px 0px ;
+
+}
+
+
 }
 
 
