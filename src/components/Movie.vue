@@ -17,7 +17,7 @@
 
   </div>
 
-  <div class="container details-wrapper">
+  <div data-aos="fade-up"   data-aos-duration="1000" class="container details-wrapper">
 
     <div class=" movie-card"  v-bind:style="{background:'linear-gradient( rgba(0, 0, 0, 0.4),  rgba(0, 0, 0, 0.4) ), url(' + posterImage + ')'}">
 

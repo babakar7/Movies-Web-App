@@ -5,16 +5,14 @@
     <Banner></Banner>
 
 
-
-    <TrendingMovies data-aos="fade-up"   data-aos-duration="1000" 
+    <TrendingMovies data-aos="fade-up"   data-aos-duration="1000"
  dataType="umovies" ></TrendingMovies>
 
-    <TrendingMovies data-aos="fade-up"      data-aos-duration="1000"
+    <TrendingMovies data-aos="fade-up"  data-aos-duration="1000"
   dataType="nowplaying"  ></TrendingMovies>
   <!--  <TrendingMovies dataType="tmovies" ></TrendingMovies>-->
-    <TrendingMovies data-aos="fade-up"      data-aos-duration="1000"
+    <TrendingMovies data-aos="fade-up"   data-aos-duration="1000"
  dataType="toprated"   ></TrendingMovies>
-
 
 
     <Footer> </Footer>
@@ -32,8 +30,8 @@ import axios from 'axios'
 import Banner from './Banner'
 import Header from './Header'
 import Footer from './Footer'
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import 'aos/dist/aos.css'
+
 
 export default {
   name: 'Home',
@@ -58,7 +56,6 @@ export default {
   },
 
   mounted(){
-    AOS.init();
 
   }
 }

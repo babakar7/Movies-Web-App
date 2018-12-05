@@ -14,7 +14,6 @@
       <div class="progress-bar" role="progressbar" v-bind:style="{width: progress}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
 
-
     <div class="info" v-if="currentMovie">
 
       <h1 class="tag"> LATEST</h1>
@@ -183,14 +182,13 @@ export default {
 }
 
 .banner-fade-enter-active, .banner-fade-leave-active{
-  transition:all 0.6s ease-in-out;
+  transition:all 0.7s ease-in-out;
 
 }
 
 .banner-fade-enter{
   transform:translateX(50px);
 }
-
 
 
 
